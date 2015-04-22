@@ -2,6 +2,8 @@
 
 ## Overview
 
+Scala has a minimal set of built-in control abstractions (`if`, `while`, `for`, `try`, `match`, and function calls). Rather than introduce a new control abstraction for special circumstances it leverages function literals and higher-order functions to introduce new control abstractions that *feel* like built-in constructs. In this topic we explore what *currying* is and how it can be used along with higher-order functions (those functions that take and return other functions as parameters and results) to reduce code duplication and introduce new control abstractions.
+
 ## Readings
 
 * Chapter 9, Odersky
