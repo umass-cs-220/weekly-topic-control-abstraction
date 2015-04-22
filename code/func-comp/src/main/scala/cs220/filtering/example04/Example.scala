@@ -1,4 +1,4 @@
-package cs220.example04
+package cs220.filtering.example04
 
 import cs220.example04._
 import cs220.example04.EMailFilters._
@@ -12,7 +12,7 @@ object Example extends App {
     minimumSize(10),
     maximumSize(10000)
   )
-  ///////////// EXTENSION ////////////////////////////////////////////  
+  ///////////// EXTENSION ////////////////////////////////////////////
 
   // Create a sequence of emails. This one is simple - it will consist
   // of only a single email.
@@ -28,6 +28,6 @@ object Example extends App {
 
   println("before filtering:")
   println(mails)
-  println("after filtering:")  
+  println("after filtering:")
   println(result)
 }

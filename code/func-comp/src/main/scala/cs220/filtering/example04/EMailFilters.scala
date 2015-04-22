@@ -1,4 +1,4 @@
-package cs220.example04
+package cs220.filtering.example04
 
 import cs220.example04._
 
@@ -23,7 +23,7 @@ object EMailFilters {
 
   def every[A](predicates: (A => Boolean)*) =
     none(predicates.map(complement(_)): _*)
-  ///////////// EXTENSION ////////////////////////////////////////////  
+  ///////////// EXTENSION ////////////////////////////////////////////
 
   val minimumSize: Int => EMailFilter = n => sizeConstraint(_ >= n)
   val maximumSize: Int => EMailFilter = n => sizeConstraint(_ <= n)
@@ -32,5 +32,5 @@ object EMailFilters {
     senders => email => senders.contains(email.sender)
   val notSentByAnyOf: Set[String] => EMailFilter =
     sentByOneOf andThen (complement(_))
-  
+
 }

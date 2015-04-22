@@ -1,4 +1,4 @@
-package cs220.example01
+package cs220.filtering.example04
 
 /** An case class to represent emails.
   */

@@ -1,4 +1,4 @@
-package cs220.example01
+package cs220.filtering.example01
 
 import cs220.example01._
 
@@ -30,7 +30,7 @@ object EMailFilters {
     * that can be used to filter an email based on its exclusion in
     * the provided set of sender emails.
     *
-    *  NOTE: this function returns a function!    
+    *  NOTE: this function returns a function!
     */
   def notSentByAnyOf(senders: Set[String]): EMailFilter =
     email => !senders.contains(email.sender)
@@ -39,7 +39,7 @@ object EMailFilters {
     * can be used to filter an email based on the minimum size of the
     * email's text.
     *
-    *  NOTE: this function returns a function!    
+    *  NOTE: this function returns a function!
     */
   def minimumSize(n: Int): EMailFilter =
     email => email.text.size >= n
@@ -47,8 +47,8 @@ object EMailFilters {
   /** The `maximumSize` factory function creates a new email filter
     * that can be used to filter an email based on the maximum size of
     * the email's text.
-    * 
-    *  NOTE: this function returns a function!        
+    *
+    *  NOTE: this function returns a function!
     */
   def maximumSize(n: Int): EMailFilter =
     email => email.text.size <= n

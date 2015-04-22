@@ -1,4 +1,4 @@
-package cs220.example02
+package cs220.filtering.example02
 
 import cs220.example02._
 import cs220.example02.EMailFilters._
@@ -22,6 +22,6 @@ object Example extends App {
 
   println("before filtering:")
   println(mails)
-  println("after filtering:")  
+  println("after filtering:")
   println(result)
 }

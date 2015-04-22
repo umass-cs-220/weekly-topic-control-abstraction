@@ -1,4 +1,4 @@
-package cs220.example00
+package cs220.filtering.example00
 
 import cs220.example01._
 
@@ -23,7 +23,7 @@ object EMailFilters {
 
   /** The `maximumSize` function is used to filter an email based on the
     * maximum size of the email's text.
-    */  
+    */
   def maximiumSize(mails: Seq[EMail], n: Int) =
     mails.filter(e => e.text.size <= n)
 }

@@ -1,7 +1,7 @@
-package cs220.example01
+package cs220.filtering.example03
 
-import cs220.example01._
-import cs220.example01.EMailFilters._
+import cs220.example03._
+import cs220.example03.EMailFilters._
 
 object Example extends App {
   // Create a customized email filter that will filter email by a list
@@ -22,6 +22,6 @@ object Example extends App {
 
   println("before filtering:")
   println(mails)
-  println("after filtering:")  
+  println("after filtering:")
   println(result)
 }

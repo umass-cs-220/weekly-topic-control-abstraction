@@ -1,6 +1,6 @@
-package cs220.example02
+package cs220.filtering.example03
 
-import cs220.example02._
+import cs220.example03._
 
 object EMailFilters {
   // EMailFilter is an type alias for the function type taking an
@@ -12,8 +12,6 @@ object EMailFilters {
     * filtered by the EMailFilter f.
     */
   def newMailsForUser(mails: Seq[EMail], f: EMailFilter) = mails.filter(f)
-
-  ///////////// EXTENSION ////////////////////////////////////////////
 
   // SizeChecker is a type alias for functions that checks the size of
   // an email's body.
@@ -31,30 +29,24 @@ object EMailFilters {
     * can be used to filter an email based on the minimum size of the
     * email's text.
     *
-    *  NOTE: this function returns a function!    
+    *  NOTE: this function returns a function!
     */
   def minimumSize(n: Int): EMailFilter = sizeConstraint(_ >= n)
 
   /** The `maximumSize` factory function creates a new email filter
     * that can be used to filter an email based on the maximum size of
     * the email's text.
-    * 
-    *  NOTE: this function returns a function!        
+    *
+    *  NOTE: this function returns a function!
     */
   def maximumSize(n: Int): EMailFilter = sizeConstraint(_ <= n)
 
   /** The `equalSize` factory function creates a new email filter that
     *  can be used to filter an email based on its size.
-    * 
-    *  NOTE: this function returns a function!    
+    *
+    *  NOTE: this function returns a function!
     */
   def equalSize(n: Int): EMailFilter = sizeConstraint(_ == n)
-
-
-
-
-
-  ///////////// EXTENSION ////////////////////////////////////////////
 
   /** The `complement` function takes a predicate function and returns
     * a new function which is the complement of the result of calling
@@ -68,22 +60,24 @@ object EMailFilters {
    definition we use function composition.
    */
 
-  /** The `sendByOneOf` factory function creates a new email filter that
-    * can be used to filter an email based on its inclusion in the
-    * given set of sender emails.
-    *
-    *  NOTE: this function returns a function!
-    */
+  ///////////// EXTENSION ////////////////////////////////////////////
+
+  /*
+   To fix the ugly form used by example02 we define our functions
+   using curry notation.
+   */
+
+  /* BEFORE
   def sendByOneOf(senders: Set[String]): EMailFilter =
     email => senders.contains(email.sender)
+   */
+  val sentByOneOf: Set[String] => EMailFilter =
+    senders => email => senders.contains(email.sender)
 
-  /** The `notSentByAnyOf` factory function creates a new email filter
-    * that can be used to filter an email based on its exclusion in
-    * the provided set of sender emails.
-    *
-    *  NOTE: this function returns a function!
-    */
-  // YUCK - this looks terrible!
+  /* BEFORE
   def notSentByAnyOf(senders: Set[String]): EMailFilter =
-    (sendByOneOf _ andThen(g => complement(g)))(senders)  
+    (sendByOneOf _ andThen(g => complement(g)))(senders)
+   */
+  val notSentByAnyOf: Set[String] => EMailFilter =
+    sentByOneOf andThen (complement(_))
 }
