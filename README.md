@@ -14,3 +14,9 @@ Scala has a minimal set of built-in control abstractions (`if`, `while`, `for`, 
 [neophytes-11]: http://danielwestheide.com/blog/2013/01/30/the-neophytes-guide-to-scala-part-11-currying-and-partially-applied-functions.html
 
 ## Resources
+
+* [By-Name Parameter to Function][daily-scala-2009-12]
+* [Defining Custom Control Structures][daily-scala-2009-11]
+
+[daily-scala-2009-11]: http://daily-scala.blogspot.com/2009/11/defining-custom-control-structures.html
+[daily-scala-2009-12]: http://daily-scala.blogspot.com/2009/12/by-name-parameter-to-function.html
