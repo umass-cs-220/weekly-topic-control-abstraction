@@ -7,6 +7,9 @@ object FileMatcher02 {
 
   type Matcher = (String, String) => Boolean
 
+  //def filesMatching(query: String, matcher: Matcher) =
+  //filesHere.filter(matcher(_: String, query))*/
+
   def filesMatching(query: String, matcher: Matcher) =
     for (file <- filesHere; if matcher(file.getName, query))
       yield file
