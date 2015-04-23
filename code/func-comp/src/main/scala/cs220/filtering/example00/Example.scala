@@ -1,7 +1,7 @@
 package cs220.filtering.example00
 
-import cs220.example00._
-import cs220.example00.EMailFilters._
+import cs220.filtering.example00._
+import cs220.filtering.example00.EMailFilters._
 
 object Example extends App {
   // Create a sequence of emails. This one is simple - it will consist

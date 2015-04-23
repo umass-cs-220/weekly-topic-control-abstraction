@@ -1,7 +1,7 @@
 package cs220.filtering.example03
 
-import cs220.example03._
-import cs220.example03.EMailFilters._
+import cs220.filtering.example03._
+import cs220.filtering.example03.EMailFilters._
 
 object Example extends App {
   // Create a customized email filter that will filter email by a list

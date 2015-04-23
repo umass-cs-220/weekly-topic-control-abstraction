@@ -1,7 +1,7 @@
 package cs220.filtering.example04
 
-import cs220.example04._
-import cs220.example04.EMailFilters._
+import cs220.filtering.example04._
+import cs220.filtering.example04.EMailFilters._
 
 object Example extends App {
   ///////////// EXTENSION ////////////////////////////////////////////
